@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const Header = (props) => {
     return (
@@ -6,10 +6,10 @@ const Header = (props) => {
             <Content>
                 {/* <Name><img src="./Images/logo.png"/></Name> */}
                 <ButtonsDiv>
-                    <Button><span>HOME</span></Button>
-                    <Button><span>REASONS</span></Button>
-                    <Button><span>PICTURES</span></Button>
-                    <Button><span>VIDEOS</span></Button>
+                    <Button href="#Home"><span>HOME</span></Button>
+                    <Button href="#Reasons"><span>REASONS</span></Button>
+                    <Button href="#Pictures"><span>PICTURES</span></Button>
+                    <Button href="#DatePlanner"><span>BIRTHDAY DATE PICKER</span></Button>
                 </ButtonsDiv>
             </Content>
         </Container>
@@ -24,6 +24,10 @@ const Container = styled.nav`
     width: 100%;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 650px){
+        height: 150px;
+    }
 `;
 
 const Content = styled.div`
@@ -32,12 +36,12 @@ const Content = styled.div`
     align-items: center;
     width: 75%;
     justify-content: space-between;
-    //max-width: 600px;
     
     a{
         color: white;
         letter-spacing: 1.5px;
         margin-right: 15px;
+        cursor: pointer;
 
         span{
             color: rgb(249, 249, 249);
@@ -73,34 +77,23 @@ const Content = styled.div`
     }
 `;
 
-// const Name = styled.a`
-//     font-family: 'Allan';
-//     color: rgb(212,175,55);
-//     padding: 15px;
-//     height: 100%;
-//     display: flex;
-//     align-items: center;
-//     overlfow: hidden;
-
-//     img{
-//         height: 50px;
-//         width 50px;
-//     }
-    
-// `;
-
 const ButtonsDiv = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
     width: 100%;
     justify-content: space-evenly;
+
+    @media (max-width: 650px){
+        flex-direction: column;
+        margin: 10px 0 10px 0;
+    }
 `;
 
 const Button = styled.a`
-
+    @media (max-width: 650px){
+        margin-bottom: 10px;
+    }
 `;
-
-
 
 export default Header;
