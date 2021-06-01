@@ -16,28 +16,6 @@ const Reasons = (props) => {
     return (
         <Container id="Reasons">
             <Title>Reasons I love You</Title>
-            <Carousel {...settings}>
-                <Wrapper>
-                    <a>
-                        <img src="/Images/IMG_0304.jpg" alt="badging"/>
-                    </a>
-                </Wrapper>
-                <Wrapper>
-                    <a>
-                        <img src="/Images/IMG_0371.jpg" alt="badag" />
-                    </a>
-                </Wrapper>
-                <Wrapper>
-                    <a>
-                        <img src="/Images/IMG_1653.jpg" alt="scale" />
-                    </a>
-                </Wrapper>
-                <Wrapper>
-                    <a>
-                        <img src="/Images/IMG_1521.jpg" alt="scales" />
-                    </a>
-                </Wrapper>
-            </Carousel>
         </Container>
     );
 };
@@ -74,16 +52,16 @@ const Carousel = styled(Slider)`
         color: white !important;
     }
     .slick-list {
-        overflow: initial;
+        visibility: hidden;
     }
     .slick-prev {
-        display: none;
+        visibility: hidden;
     }
     .slick-next{
-        display: none;
+        visibility: hidden;
     }
     .slick-arrow{
-        display: none;
+        visibility: hidden;
     }
 `;
 
