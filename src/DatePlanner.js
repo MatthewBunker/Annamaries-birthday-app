@@ -3,31 +3,28 @@ import styled from 'styled-components/macro';
 
 const DatePlanner = (props) => {
     function sendItenerary(){
-        
-        var iteneraryConfirmationText = "Scroll Below For Your Itenerary."
-        var iteneraryConfirmationDiv = document.getElementById("iteneraryMessage");
-        
-        iteneraryConfirmationDiv.style = "text-align: center;"
-
-        iteneraryConfirmationDiv.innerHTML = "";
-        iteneraryConfirmationDiv.innerHTML = iteneraryConfirmationText;
-
-        var iteneraryTitle = document.getElementById("iteneraryTitle");
-        iteneraryTitle.style.margin = "15px";
-        iteneraryTitle.innerHTML = "Annamarie's 21st Birthday Itenerary";
-
-        var iteneraryText = document.getElementById("iteneraryText");
 
         var Location = document.getElementById("location").value;
         var Date = document.getElementById("date").value;
         var Time = document.getElementById("time").value;
+        
         var funActivity = document.getElementById("funActivity").value;
         var sunsetSpot = document.getElementById("sunsetSpot").value;
         var restaurantLocation = document.getElementById("restaurantLocation").value;
         var drinkChoice = document.getElementById("drinkChoice").value;
         var movieChoice = document.getElementById("movieChoice").value;
 
-        iteneraryText.innerHTML = "Location: " + Location + "<br>" +
+        if (Location !== "" && Date !== "" && Time !== "" && funActivity !== "" && sunsetSpot !== "" && restaurantLocation !== "" && drinkChoice !== "" && movieChoice !== ""){
+            var iteneraryText = document.getElementById("iteneraryText");
+            var iteneraryTitle = document.getElementById("iteneraryTitle");
+
+            iteneraryTitle.innerHTML = "";
+            iteneraryText.innerHTML = "";
+
+            iteneraryTitle.style.margin = "15px";
+            iteneraryTitle.innerHTML = "Annamarie's 21st Birthday Itenerary";
+
+            iteneraryText.innerHTML = "Location: " + Location + "<br>" +
                                   "Date: " + Date + "<br>" + 
                                   "Time: " + Time + "<br>" +
                                   "Fun Activity: " + funActivity + "<br>" +
@@ -35,33 +32,26 @@ const DatePlanner = (props) => {
                                   "Restaurant Location: " + restaurantLocation + "<br>" +
                                   "Drink Choice: " + drinkChoice + "<br>" +
                                   "Movie Choice: " + movieChoice + "<br>";
-        
-        var submitButton = document.getElementById("submitButton");
-        submitButton.disabled = true;
-        
 
-        // $.ajax({
-        //     type: 'POST',
-        //     url: 'https://mandrillapp.com/api/1.0/messages/send.json',
-        //     data: {
-        //       'key': 'f4fd772ca573d975b8dd26d7ee018a08-us6',
-        //       'message': {
-        //         'from_itenerary': 'matthewscottbunker@gmail.com',
-        //         'to': [
-        //             {
-        //               'itenerary': 'matthewscottbunker@gmail.com',
-        //               'name': '',
-        //               'type': 'to'
-        //             }
-        //           ],
-        //         'autotext': 'true',
-        //         'subject': 'Test itenerary',
-        //         'html': 'Congrats you did it'
-        //       }
-        //     }
-        //    }).done(function(response) {
-        //      console.log(response); // if you're into that sorta thing
-        // });
+            var iteneraryConfirmationText = "Scroll Below For Your Itenerary."
+            var iteneraryConfirmationDiv = document.getElementById("iteneraryMessage");
+            
+            iteneraryConfirmationDiv.style = "text-align: center;"
+    
+            iteneraryConfirmationDiv.innerHTML = "";
+            iteneraryConfirmationDiv.innerHTML = iteneraryConfirmationText;
+
+            var submitButton = document.getElementById("submitButton");
+        }
+        else {
+            var iteneraryConfirmationText = "Make Sure You Fill In All Sections"
+            var iteneraryConfirmationDiv = document.getElementById("iteneraryMessage");
+            
+            iteneraryConfirmationDiv.style = "text-align: center;"
+    
+            iteneraryConfirmationDiv.innerHTML = "";
+            iteneraryConfirmationDiv.innerHTML = iteneraryConfirmationText;
+        }
     }
 
     return (

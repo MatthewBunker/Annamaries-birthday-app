@@ -15,14 +15,96 @@ const Reasons = (props) => {
 
     return (
         <Container id="Reasons">
-            <Title>Reasons I love You</Title>
+            <Title>25 Reasons I love You</Title>
+            <Carousel>
+                <Slider {...settings}>
+                    <Wrapper>
+                        <h3>Adventorous</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Asks Me Questions About My Day</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Athletic</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Beautiful</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Caring</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Great Family</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Great Tv Show Choices</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Hardworking</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Kind</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Likes To Play Board Games</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Loves Everybody</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Loves Marvel</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Loves Me Unconditionally</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Loves To Cuddle</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Makes Me A Better Man</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Open-Minded</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Passionate</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Right Amount Of Country And City</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Selfless</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Shows Characteristics Of A Godly Woman</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Strong Faith</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Takes Initiative In My Life</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Unique</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Wants To Travel</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>Willing To Spend The Rest Of Her Life With Me</h3>
+                    </Wrapper>
+                </Slider>
+            </Carousel>
         </Container>
     );
 };
 
 const Container = styled.div`
     min-height: 100vh;
-    background-color: #1A1A1D; 
+    background-color: #A239CA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `;
 
 const Title = styled.h1`
@@ -38,46 +120,47 @@ const Title = styled.h1`
 `;
 
 const Carousel = styled(Slider)`
-    //border: 5px solid green;
-    height: 60vh;
-    width: 30%;
+    //border: 1px solid blue;
+    text-align: center;
+    padding: 50x 0 0 0;
+    color: white;
+    font-size: 5rem;
 
     & > button {
-        display: none;
+        opacity: 0;
+        height: 100%;
+        width: 5vw;
+        z-index: 1;
+        &:hover {
+            opacity: 1;
+            transition: opacity .2s ease 0s;
+        }
     }
     ul li button {
-       display: none;
+        &:before {
+            font-size: 10px;
+            color: rgb(150,158, 171);
+        }
     }
     li.slick-active button:before {
         color: white !important;
     }
     .slick-list {
-        visibility: hidden;
+        overflow: initial;
     }
     .slick-prev {
-        visibility: hidden;
+        left: 75px;
     }
     .slick-next{
-        visibility: hidden;
-    }
-    .slick-arrow{
-        visibility: hidden;
+        right: 75px;
     }
 `;
 
 const Wrapper = styled.div`
-    height: 60vh;
-    width: 50%;
-    img{
-        width: 100%;
-        height: 100%;
-    }
-    &:hover {
-        padding: 0;
-        border: 4px solid rgba( 249, 249, 249, .8);
-        transition-duration: 300ms;
-    }
-    //border: 5px solid blue;
+    //border: 1px solid green;
+    height: 100%;
+    font-size: 50px;
+    
 `;
 
 export default Reasons;

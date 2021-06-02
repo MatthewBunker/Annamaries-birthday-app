@@ -8,7 +8,7 @@ const Pictures = (props) => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
     };
@@ -16,27 +16,27 @@ const Pictures = (props) => {
     return (
         <Container id="Pictures">
             <Title>Pictures</Title>
-            <Carousel {...settings}>
-                <Wrapper>
-                    <a>
-                        <img src="/Images/IMG_0304.jpg" alt="badging"/>
-                    </a>
-                </Wrapper>
-                <Wrapper>
-                    <a>
-                        <img src="/Images/IMG_0371.jpg" alt="badag" />
-                    </a>
-                </Wrapper>
-                <Wrapper>
-                    <a>
-                        <img src="/Images/IMG_1653.jpg" alt="scale" />
-                    </a>
-                </Wrapper>
-                <Wrapper>
-                    <a>
-                        <img src="/Images/IMG_1521.jpg" alt="scales" />
-                    </a>
-                </Wrapper>
+            <Carousel>
+                <Slider {...settings}>
+                    <Wrapper>
+                        <h3>Passionate</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>2</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>3</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>4</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>5</h3>
+                    </Wrapper>
+                    <Wrapper>
+                        <h3>6</h3>
+                    </Wrapper>
+                </Slider>
             </Carousel>
         </Container>
     );
@@ -44,11 +44,11 @@ const Pictures = (props) => {
 
 const Container = styled.div`
     min-height: 100vh;
-    background-color: white; 
+    background-color: #F172A1; 
 `;
 
 const Title = styled.h1`
-    color: #1A1A1D;
+    color: white;
     display: flex;
     justify-content: center;
     padding-top: 102px;
@@ -60,46 +60,43 @@ const Title = styled.h1`
 `;
 
 const Carousel = styled(Slider)`
-    //border: 5px solid green;
-    height: 60vh;
-    width: 30%;
+    //border: 1px solid blue;
+    padding: 50x 0 0 0;
 
     & > button {
-        display: none;
+        opacity: 0;
+        height: 100%;
+        width: 5vw;
+        z-index: 1;
+        &:hover {
+            opacity: 1;
+            transition: opacity .2s ease 0s;
+        }
     }
     ul li button {
-       display: none;
+        &:before {
+            font-size: 10px;
+            color: black;
+        }
     }
     li.slick-active button:before {
-        color: white !important;
+        color: black !important;
     }
     .slick-list {
         overflow: initial;
     }
     .slick-prev {
-        display: none;
+        left: 300px;
     }
     .slick-next{
-        display: none;
-    }
-    .slick-arrow{
-        display: none;
+        right: 750px;
     }
 `;
 
 const Wrapper = styled.div`
-    height: 60vh;
-    width: 50%;
-    img{
-        width: 100%;
-        height: 100%;
-    }
-    &:hover {
-        padding: 0;
-        border: 4px solid rgba( 249, 249, 249, .8);
-        transition-duration: 300ms;
-    }
-    //border: 5px solid blue;
+    //border: 1px solid green;
+    height: 100%;
+    
 `;
 
 
