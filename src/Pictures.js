@@ -1,43 +1,72 @@
 import styled from 'styled-components/macro';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import Slider from "react-slick";
 
 const Pictures = (props) => {
-    let settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-    };
 
     return (
         <Container id="Pictures">
             <Title>Pictures</Title>
-            <Carousel>
-                <Slider {...settings}>
-                    <Wrapper>
-                        <h3>Passionate</h3>
-                    </Wrapper>
-                    <Wrapper>
-                        <h3>2</h3>
-                    </Wrapper>
-                    <Wrapper>
-                        <h3>3</h3>
-                    </Wrapper>
-                    <Wrapper>
-                        <h3>4</h3>
-                    </Wrapper>
-                    <Wrapper>
-                        <h3>5</h3>
-                    </Wrapper>
-                    <Wrapper>
-                        <h3>6</h3>
-                    </Wrapper>
-                </Slider>
-            </Carousel>
+            <PictureDiv>
+                <Wrap>
+                    <img src="./Images/IMG_0024.jpg" style={{objectPosition: "top"}}/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_0115.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_0291.jpg" style={{objectPosition: "top"}}/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_0305.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_0371.jpg" />
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_0381.jpg" />
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_0875.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_1082.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_1234.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_1350.jpg" style={{objectPosition: "top"}}/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_1521.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_1636.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_1653.jpg" style={{objectPosition: "top"}}/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_1771.jpg" style={{objectPosition: "top"}}/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_3136.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_3707.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/RenderedImage.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_0195.jpg" style={{objectPosition: "top"}}/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_0201.jpg"/>
+                </Wrap>
+                <Wrap>
+                    <img src="./Images/IMG_4039.jpg"/>
+                </Wrap>
+            </PictureDiv>
         </Container>
     );
 }
@@ -59,45 +88,46 @@ const Title = styled.h1`
     }
 `;
 
-const Carousel = styled(Slider)`
-    //border: 1px solid blue;
-    padding: 50x 0 0 0;
+const PictureDiv = styled.div`
+    display: grid;
+    grid-gap: 25px;
+    gap: 25px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-bottom: 20px;
+    @media (max-width: 768px){
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
-    & > button {
-        opacity: 0;
+`;
+
+const Wrap = styled.div`
+    padding-top: 56.25%;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb( 0 0 0 / 73%) 0px 16px 10px -10px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: all 250ms cubic-bezier(.25, .46, .45, .94) 0s;
+    border: 3px solid rgba(249, 249, 249, .1);
+
+    img {
+        inset: 0px;
+        display: block;
         height: 100%;
-        width: 5vw;
+        object-fit: cover;
+        opacity: 1;
+        position: absolute;
+        transition: opacity 500ms ease-in-out;
+        width: 100%;
         z-index: 1;
-        &:hover {
-            opacity: 1;
-            transition: opacity .2s ease 0s;
-        }
+        top: 0;
+        object-position: center;
     }
-    ul li button {
-        &:before {
-            font-size: 10px;
-            color: black;
-        }
-    }
-    li.slick-active button:before {
-        color: black !important;
-    }
-    .slick-list {
-        overflow: initial;
-    }
-    .slick-prev {
-        left: 300px;
-    }
-    .slick-next{
-        right: 750px;
+    &:hover{
+        box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb( 0 0 0 / 72%) 0px 30px 22px -10px;
+        transform: scale(1.05);
+        border-color rgba(249, 249, 249, 0.8);
     }
 `;
-
-const Wrapper = styled.div`
-    //border: 1px solid green;
-    height: 100%;
-    
-`;
-
 
 export default Pictures;

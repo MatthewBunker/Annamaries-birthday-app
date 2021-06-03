@@ -122,7 +122,7 @@ const Title = styled.h1`
 const Carousel = styled(Slider)`
     //border: 1px solid blue;
     text-align: center;
-    padding: 50x 0 0 0;
+    //padding: 50x 0 0 0;
     color: white;
     font-size: 5rem;
 
@@ -131,6 +131,7 @@ const Carousel = styled(Slider)`
         height: 100%;
         width: 5vw;
         z-index: 1;
+        
         &:hover {
             opacity: 1;
             transition: opacity .2s ease 0s;

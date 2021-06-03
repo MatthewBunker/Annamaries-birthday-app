@@ -27,6 +27,7 @@ const Container = styled.div`
     text-align: center;
     min-height: 100vh;
     width: 100%;
+    justify-content: center;
     //border: 1px solid green;
 `;
 
@@ -77,9 +78,9 @@ const Words = styled.div`
 const Text = styled.h1`
     color: white;
     font-size: 60px;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-    border-radius: 70px 15px;
+    //border-left: 1px solid white;
+    //border-right: 1px solid white;
+    //border-radius: 70px 15px;
     background-color: rgba(0,0,0, .8);
     box-shadow: #1A1A1D 0px 3px 5px 1px;
     padding: 15px;
@@ -92,11 +93,10 @@ const Text = styled.h1`
 const Text2 = styled.h1`
     color: white;
     font-size: 20px;
-    border-radius: 10px;
     padding: 15px;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-    border-radius: 5px 25px;
+    //border-left: 1px solid white;
+    //border-right: 1px solid white;
+    //border-radius: 5px 25px;
     background-color: rgba(0,0,0, .8);
     box-shadow: #1A1A1D 0px 3px 5px 1px;
 `;
@@ -121,7 +121,7 @@ const BGImage = styled.div`
     background-repeat: no-repeat;
 
      //background: linear-gradient(#FFFFFF, rgb(191, 87, 0));
-     background: linear-gradient(#ba55d3,#c9a0dc, white);
+     background: linear-gradient(#F79E02,white, white);
     // background-image: url(./Images/adam-birkett-75EFpyXu3Wg-unsplash.jpg);
     // background-color: #424242;
     position: absolute;

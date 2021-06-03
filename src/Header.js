@@ -21,7 +21,7 @@ const Container = styled.nav`
     height: 72px;
     z-index: 3;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
 
